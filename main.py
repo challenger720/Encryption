@@ -1,5 +1,7 @@
 import random
 import string
+from pydoc import plaintext
+
 chars = " " + string.punctuation + string.ascii_letters + string.digits
 chars = list(chars)
 key = chars.copy()
@@ -20,13 +22,17 @@ for letter in plain_text:
 print(f"original message: {plain_text}")
 print(f"cipher text: {cipher_text}")
 
+
 #Decryption
-plain_text = input("Enter a message to encrypt: ")
-cipher_text = ""
+cipher_text = input("Enter a message to decrypt: ")
+plain_text = ""
 
-for letter in plain_text:
-    index = chars.index(letter)
-    cipher_text += key[index]
+for letter in cipher_text:
+    index = key.index(letter)
+    plain_text += chars[index]
 
+print(f"encrypted message: {cipher_text}")
 print(f"original message: {plain_text}")
-print(f"cipher text: {cipher_text}")
+
+
+
